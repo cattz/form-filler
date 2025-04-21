@@ -1,1 +1,1 @@
-// No se necesita hacer nada aquí aún.
+chrome.runtime.onInstalled.addListener(() => { console.log('Form Autofiller Assistant instalado.'); });

@@ -1,26 +1,39 @@
 {
   "manifest_version": 3,
-  "name": "Form Autofiller Assistant (Final Pro)",
-  "version": "2.0",
-  "description": "Autorrellena formularios de forma inteligente con soporte para mapeo específico, mapeo general y reglas avanzadas.",
-  "permissions": ["storage", "activeTab", "scripting"],
-  "background": { "service_worker": "background.js" },
+  "name": "Form Autofiller Assistant",
+  "version": "1.0",
+  "description": "Auto-fill web forms using customizable identities and field mappings",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "scripting"
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
-      "16": "icons/icon-16.png",
-      "32": "icons/icon-32.png",
-      "48": "icons/icon-48.png",
-      "128": "icons/icon-128.png"
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
     }
   },
-  "icons": {
-    "16": "icons/icon-16.png",
-    "32": "icons/icon-32.png",
-    "48": "icons/icon-48.png",
-    "128": "icons/icon-128.png"
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
   },
   "content_scripts": [
-    { "matches": ["<all_urls>"], "js": ["content.js"] }
-  ]
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
 }
